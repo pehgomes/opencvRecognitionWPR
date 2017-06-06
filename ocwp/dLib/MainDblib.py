@@ -3,6 +3,8 @@ import cv2
 
 video_capture = cv2.VideoCapture(0)
 
+logo = cv2.imread("logo1.png")
+cv2.imshow("logo", logo)
 
 obama_image = face_recognition.load_image_file("eu.jpg")
 obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
@@ -37,7 +39,6 @@ while True:
 
 
 
-
     for (top, right, bottom, left), name in zip(face_locations, face_names):
         top *= 4
         right *= 4
@@ -53,7 +54,7 @@ while True:
         font = cv2.FONT_HERSHEY_DUPLEX
         cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
 
-    cv2.imshow('video', frame)
+    cv2.imshow('reconhecedor, v1.0, 04-06-2017, Pedro H. Gomes - Luan Sousa', frame)
 
 
 
